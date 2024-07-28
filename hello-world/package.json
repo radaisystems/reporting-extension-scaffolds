@@ -2,6 +2,7 @@
   "name": "{{ slug }}",
   "rad-ai-developer-id": "{{ developer-id }}",
   "rad-ai-extension-id": "{{ extension-id }}",
+  "rad-ai-environment-url": "{{ environment-url }}",
   "version": "0.0.1",
   "main": "./dist/main.umd.cjs",
   "scripts": {
