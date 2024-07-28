@@ -1,0 +1,25 @@
+{
+  "name": "{{ slug }}",
+  "rad-ai-developer-id": "{{ developer-id }}",
+  "rad-ai-extension-id": "{{ extension-id }}",
+  "version": "0.0.1",
+  "main": "./dist/main.umd.cjs",
+  "scripts": {
+    "type-check": "tsc --noEmit",
+    "test": "vitest run --coverage",
+    "build": "vite build",
+    "preview": "vite preview",
+    "dev": "concurrently \"npm run build -- --watch\" \"npm run preview\""
+  },
+  "dependencies": {
+    "@rad-ai/reporting-extensions": "*"
+  },
+  "devDependencies": {
+    "@vitest/coverage-v8": "^1.6.0",
+    "concurrently": "^8.2.2",
+    "prettier": "^3.2.5",
+    "typescript": "^5.2.2",
+    "vite": "^5.2.0",
+    "vitest": "^1.6.0"
+  }
+}
