@@ -1,6 +1,6 @@
 import * as reporting from "@rad-ai/reporting-extensions";
 
-reporting.lifecycle.addEventListener("report-created", () => {
+reporting.lifecycle.addEventListener("report-opened", () => {
   reporting.alerts.confirm("Are you sure you want to create a report? 🫣", {
     onConfirm: () => {
       reporting.alerts.confirm("Are you really, really sure?? 😥", {
@@ -29,8 +29,8 @@ reporting.lifecycle.addEventListener("report-created", () => {
 let totalReports = 0;
 let malformedReports = 0;
 
-reporting.lifecycle.addEventListener("report-signing", (event) => {
-  const lowerContent = event.contentStr.toLowerCase();
+reporting.lifecycle.addEventListener("report-updated", (event) => {
+  const lowerContent = event.shortcuts.reportContent.toLowerCase();
   const requiredContent = "IMPRESSION".toLowerCase();
 
   const mentionedImpression = lowerContent.includes(requiredContent);
@@ -41,32 +41,30 @@ reporting.lifecycle.addEventListener("report-signing", (event) => {
 
   totalReports++;
 
-  reporting.views.tree.updateTreeView([
+  reporting.views.render([
     {
       type: "text",
-      value: "Report Stats:",
+      children: "Report Stats:",
+    },
+    {
+      type: "list",
       children: [
         {
-          type: "list",
-          children: [
-            {
-              type: "text",
-              value: `Total Reports: ${totalReports.toLocaleString()}`,
-            },
-            {
-              type: "text",
-              value: `Malformed Reports: ${malformedReports.toLocaleString()}`,
-            },
-            {
-              type: "text",
-              value: `Report Success Rate: ${(((totalReports - malformedReports) / totalReports) * 100).toFixed(1)}%`,
-            },
-            {
-              type: "checkbox",
-              checked: mentionedImpression,
-              value: "Contains Impression Section",
-            },
-          ],
+          type: "text",
+          children: `Total Reports: ${totalReports.toLocaleString()}`,
+        },
+        {
+          type: "text",
+          children: `Malformed Reports: ${malformedReports.toLocaleString()}`,
+        },
+        {
+          type: "text",
+          children: `Report Success Rate: ${(((totalReports - malformedReports) / totalReports) * 100).toFixed(1)}%`,
+        },
+        {
+          type: "checkbox",
+          checked: mentionedImpression,
+          children: "Contains Impression Section",
         },
       ],
     },

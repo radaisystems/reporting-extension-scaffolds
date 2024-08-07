@@ -1,7 +1,7 @@
 import * as reporting from "@rad-ai/reporting-extensions";
 import { describe, expect, test, vi } from "vitest";
 
-describe("report-created", () => {
+describe("report-opened", () => {
   test("started shift is logged once", async () => {
     // Spy on the `reporting.alerts.notify` function to make sure it's called
     vi.spyOn(reporting.alerts, "notify");

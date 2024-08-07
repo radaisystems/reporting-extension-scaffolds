@@ -2,7 +2,7 @@ import { describe, expect, test, vi } from "vitest";
 
 import * as reporting from "@rad-ai/reporting-extensions";
 
-describe("report-created", () => {
+describe("report-opened", () => {
   test("cancel", async () => {
     vi.spyOn(reporting.alerts, "notify");
 
@@ -103,12 +103,12 @@ describe("report-created", () => {
   });
 });
 
-describe("report-signing", () => {
+describe("report-updated", () => {
   test("with impression and without impression", async () => {
     // Both the with and without checks are in the same test
     // We're not able to reset local state between tests in the same file
     // See: https://github.com/vitest-dev/vitest/discussions/1741#discussioncomment-3298647
-    const updateTreeViewSpy = vi.spyOn(reporting.views.tree, "updateTreeView");
+    const updateTreeViewSpy = vi.spyOn(reporting.views, "render");
 
     // Initialize the SDK
     reporting.mocks.initialize();
@@ -117,17 +117,17 @@ describe("report-signing", () => {
     await import("./main.js");
 
     // Assert initial state
-    expect(reporting.views.tree.updateTreeView).not.toHaveBeenCalled();
+    expect(reporting.views.render).not.toHaveBeenCalled();
 
     // Sign a report with "impression" in the text
-    reporting.mocks.signReport("My report contains an impression");
+    reporting.mocks.updateReport("My report contains an impression");
 
     // Sign a report without "impression" in the text
-    reporting.mocks.signReport("My report contains a finding");
+    reporting.mocks.updateReport("My report contains a finding");
 
     // Check the tree views
     await vi.waitFor(() => {
-      expect(reporting.views.tree.updateTreeView).toHaveBeenCalledTimes(2);
+      expect(reporting.views.render).toHaveBeenCalledTimes(2);
 
       const firstTreeNodes = JSON.stringify(updateTreeViewSpy.mock.calls[0]);
 
