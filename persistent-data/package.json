@@ -1,5 +1,5 @@
 {
-  "name": "@rad-ai/started-on-reports",
+  "name": "@rad-ai/persistent-data",
   "rad-ai-developer-id": "{{ developer-id }}",
   "rad-ai-extension-id": "{{ extension-id }}",
   "rad-ai-environment-url": "{{ environment-url }}",

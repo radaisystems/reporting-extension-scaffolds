@@ -1,5 +1,5 @@
 {
-  "name": "{{ slug }}",
+  "name": "@rad-ai/minimalist",
   "rad-ai-developer-id": "{{ developer-id }}",
   "rad-ai-extension-id": "{{ extension-id }}",
   "rad-ai-environment-url": "{{ environment-url }}",
@@ -13,12 +13,12 @@
     "dev": "concurrently \"npm run build -- --watch\" \"npm run preview\""
   },
   "dependencies": {
-    "@rad-ai/reporting-extensions": "*"
+    "@rad-ai/reporting-extensions": "0.0.10"
   },
   "devDependencies": {
     "@vitest/coverage-v8": "^1.6.0",
     "concurrently": "^8.2.2",
-    "prettier": "^3.2.5",
+    "prettier": "^3.3.3",
     "typescript": "^5.2.2",
     "vite": "^5.2.0",
     "vitest": "^1.6.0"
