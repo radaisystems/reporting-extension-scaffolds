@@ -1,4 +1,4 @@
-import * as reporting from "@rad-ai/reporting-extensions";
+import * as reporting from "@radai/reporting-extensions";
 
 reporting.lifecycle.addEventListener("report-opened", () => {
   // Add your event handler here

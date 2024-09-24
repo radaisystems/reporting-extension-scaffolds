@@ -1,4 +1,4 @@
-import * as reporting from "@rad-ai/reporting-extensions";
+import * as reporting from "@radai/reporting-extensions";
 
 reporting.lifecycle.addEventListener("report-opened", () => {
   reporting.alerts.confirm("Are you sure you want to create a report? 🫣", {

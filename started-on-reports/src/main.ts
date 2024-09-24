@@ -1,4 +1,4 @@
-import * as reporting from "@rad-ai/reporting-extensions";
+import * as reporting from "@radai/reporting-extensions";
 
 function startedShift() {
   // Stop listening to `report-created` events

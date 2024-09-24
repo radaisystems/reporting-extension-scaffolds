@@ -1,6 +1,6 @@
 import { describe, test } from "vitest";
 
-import * as reporting from "@rad-ai/reporting-extensions";
+import * as reporting from "@radai/reporting-extensions";
 
 describe("main", () => {
   test("test", async () => {

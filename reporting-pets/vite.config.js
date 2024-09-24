@@ -11,10 +11,10 @@ export default {
       formats: ["umd"],
     },
     rollupOptions: {
-      external: ["@rad-ai/reporting-extensions"],
+      external: ["@radai/reporting-extensions"],
       output: {
         globals: {
-          "@rad-ai/reporting-extensions": "reporting",
+          "@radai/reporting-extensions": "reporting",
         },
         assetFileNames: (assetInfo) => {
           console.log(assetInfo);

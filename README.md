@@ -6,5 +6,5 @@ Use these examples as scaffolds for your extensions.
 You can download the examples here, but we recommend that you use our CLI to create your extension:
 
 ```shell
-npx @rad-ai/reporting-extensions init
+npx @radai/reporting-extensions init
 ```

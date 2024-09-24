@@ -1,4 +1,4 @@
-import * as reporting from "@rad-ai/reporting-extensions";
+import * as reporting from "@radai/reporting-extensions";
 
 import backgroundBeach from "/background-beach.png";
 import backgroundForest from "/background-forest.png";
@@ -147,7 +147,7 @@ function render(disabled: boolean) {
                   },
                 },
               ],
-            } as const satisfies reporting.ColumnNode;
+            } as const satisfies reporting.types.ColumnNode;
           }),
         },
         {

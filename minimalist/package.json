@@ -1,5 +1,5 @@
 {
-  "name": "@rad-ai/minimalist",
+  "name": "@radai/minimalist",
   "rad-ai-developer-id": "{{ developer-id }}",
   "rad-ai-extension-id": "{{ extension-id }}",
   "rad-ai-environment-url": "{{ environment-url }}",
@@ -13,7 +13,7 @@
     "dev": "concurrently \"npm run build -- --watch\" \"npm run preview\""
   },
   "dependencies": {
-    "@rad-ai/reporting-extensions": "^0.0.11"
+    "@radai/reporting-extensions": "0.0.1"
   },
   "devDependencies": {
     "@vitest/coverage-v8": "^1.6.0",

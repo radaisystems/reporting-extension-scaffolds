@@ -1,4 +1,4 @@
-import * as reporting from "@rad-ai/reporting-extensions";
+import * as reporting from "@radai/reporting-extensions";
 import { describe, expect, test, vi } from "vitest";
 
 describe("report-opened", () => {
